@@ -10,6 +10,10 @@
 		9816160225FA4FFF00F064CB /* NetworkLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981615F825FA4FFF00F064CB /* NetworkLibrary.framework */; };
 		9816160725FA4FFF00F064CB /* NetworkLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816160625FA4FFF00F064CB /* NetworkLibraryTests.swift */; };
 		9816160925FA4FFF00F064CB /* NetworkLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 981615FB25FA4FFF00F064CB /* NetworkLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9816161825FA520400F064CB /* Servicemanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161725FA520400F064CB /* Servicemanager.swift */; };
+		9816161A25FA556000F064CB /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161925FA556000F064CB /* ParameterEncoding.swift */; };
+		9816161C25FA70C400F064CB /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161B25FA70C400F064CB /* NetworkRouter.swift */; };
+		9816161E25FA726A00F064CB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161D25FA726A00F064CB /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		9816160125FA4FFF00F064CB /* NetworkLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816160625FA4FFF00F064CB /* NetworkLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLibraryTests.swift; sourceTree = "<group>"; };
 		9816160825FA4FFF00F064CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9816161725FA520400F064CB /* Servicemanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servicemanager.swift; sourceTree = "<group>"; };
+		9816161925FA556000F064CB /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		9816161B25FA70C400F064CB /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		9816161D25FA726A00F064CB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 		981615FA25FA4FFF00F064CB /* NetworkLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				9816161625FA519F00F064CB /* Encoding */,
+				9816161525FA519100F064CB /* Service */,
+				9816161425FA518200F064CB /* Manager */,
+				9816161325FA512300F064CB /* EndPoint */,
 				981615FB25FA4FFF00F064CB /* NetworkLibrary.h */,
 				981615FC25FA4FFF00F064CB /* Info.plist */,
 			);
@@ -84,6 +96,38 @@
 				9816160825FA4FFF00F064CB /* Info.plist */,
 			);
 			path = NetworkLibraryTests;
+			sourceTree = "<group>";
+		};
+		9816161325FA512300F064CB /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		9816161425FA518200F064CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9816161525FA519100F064CB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9816161725FA520400F064CB /* Servicemanager.swift */,
+				9816161B25FA70C400F064CB /* NetworkRouter.swift */,
+				9816161D25FA726A00F064CB /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9816161625FA519F00F064CB /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				9816161925FA556000F064CB /* ParameterEncoding.swift */,
+			);
+			path = Encoding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +191,7 @@
 				TargetAttributes = {
 					981615F725FA4FFF00F064CB = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					9816160025FA4FFF00F064CB = {
 						CreatedOnToolsVersion = 12.5;
@@ -194,6 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9816161E25FA726A00F064CB /* Router.swift in Sources */,
+				9816161A25FA556000F064CB /* ParameterEncoding.swift in Sources */,
+				9816161825FA520400F064CB /* Servicemanager.swift in Sources */,
+				9816161C25FA70C400F064CB /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +390,8 @@
 		9816160D25FA4FFF00F064CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pratapagiris.NetworkLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +416,8 @@
 		9816160E25FA4FFF00F064CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -387,6 +441,7 @@
 		9816161025FA4FFF00F064CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetworkLibraryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +459,7 @@
 		9816161125FA4FFF00F064CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetworkLibraryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
