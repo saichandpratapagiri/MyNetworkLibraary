@@ -15,10 +15,16 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         do {
             let request = try buildRequest(from: type)
             task = session.dataTask(with: request, completionHandler: { data, response, error in
-                completion(data, response, error)
+                do {
+                    let dictResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+                    NetworkLogger.log(response: dictResponse ?? ["Response" : ""])
+                    completion(dictResponse, error)
+                } catch {
+                    completion(nil, error)
+                }
             })
         } catch {
-            completion(nil, nil, error)
+            completion(nil, error)
         }
     }
     
@@ -41,6 +47,7 @@ fileprivate func buildRequest(from route: EndPointType) throws -> URLRequest {
             appendAdditionalHeaders(additionalHeaders, request: &request)
             try configureParams(bodyParams: bodyParams, urlParams: urlParams, request: &request)
         }
+        NetworkLogger.log(request: request)
         return request
     } catch {
         throw error

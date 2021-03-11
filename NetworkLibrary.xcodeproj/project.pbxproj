@@ -14,6 +14,7 @@
 		9816161A25FA556000F064CB /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161925FA556000F064CB /* ParameterEncoding.swift */; };
 		9816161C25FA70C400F064CB /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161B25FA70C400F064CB /* NetworkRouter.swift */; };
 		9816161E25FA726A00F064CB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161D25FA726A00F064CB /* Router.swift */; };
+		9816162025FA855B00F064CB /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161F25FA855B00F064CB /* NetworkLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		9816161925FA556000F064CB /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		9816161B25FA70C400F064CB /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		9816161D25FA726A00F064CB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9816161F25FA855B00F064CB /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				9816161725FA520400F064CB /* Servicemanager.swift */,
 				9816161B25FA70C400F064CB /* NetworkRouter.swift */,
 				9816161D25FA726A00F064CB /* Router.swift */,
+				9816161F25FA855B00F064CB /* NetworkLogger.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9816162025FA855B00F064CB /* NetworkLogger.swift in Sources */,
 				9816161E25FA726A00F064CB /* Router.swift in Sources */,
 				9816161A25FA556000F064CB /* ParameterEncoding.swift in Sources */,
 				9816161825FA520400F064CB /* Servicemanager.swift in Sources */,
