@@ -13,12 +13,22 @@ public enum RequestError: String, Error {
     case missingUrl = "URL is nil."
 }
 
-protocol EndPointType {
+public protocol EndPointType {
     var baseUrl: URL { get }
     var path: String { get }
     var httpMethod: HttpMethod { get }
     var task: HttpTask { get }
-    var headers: HttpHeaders { get }
+    var headers: HttpHeaders? { get }
+}
+
+extension EndPointType {
+    var task: HttpTask {
+        return .request
+    }
+    
+    var headers: HttpHeaders? {
+        return nil
+    }
 }
 
 public enum HttpMethod: String {

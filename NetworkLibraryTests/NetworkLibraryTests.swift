@@ -6,12 +6,15 @@
 //
 
 import XCTest
+import NetworkLibrary
+
 @testable import NetworkLibrary
 
 class NetworkLibraryTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
 
     override func tearDownWithError() throws {
@@ -19,15 +22,36 @@ class NetworkLibraryTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let expectation = self.expectation(description: "Waiting for api")
+        NetworkManager(configuration: self).request { response, error in
+            print(response as Any)
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
+}
+
+extension NetworkLibraryTests: Configure {
+    var endpoint: EndPointType {
+        return self
+    }
+}
+
+extension NetworkLibraryTests: EndPointType {
+    
+    var baseUrl: URL {
+//        return URL(string: "https://swapi.dev/")!
+        return URL(string: "https://jsonplaceholder.typicode.com/")!
+    }
+    
+    var path: String {
+//        return "api/people/"
+        return "todos"
+    }
+    
+    var httpMethod: HttpMethod {
+        return .get
+    }
+    
 }

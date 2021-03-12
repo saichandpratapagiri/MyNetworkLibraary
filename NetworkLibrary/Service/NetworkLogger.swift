@@ -36,7 +36,7 @@ class NetworkLogger {
         print(logOutput)
     }
     
-    static func log(response: [String : Any]) {
-        print(response.description)
+    static func log(response: Any) {
+        print("Response from server\n",(response as AnyObject).description ?? "")
     }
 }

@@ -7,22 +7,25 @@
 
 import Foundation
 
-class Router<EndPoint: EndPointType>: NetworkRouter {
+class Router: NetworkRouter {
     private var task: URLSessionTask?
     
     func request(endPintType type: EndPointType, completion: @escaping NetworkRouterCompletion) {
-        let session = URLSession.shared
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         do {
             let request = try buildRequest(from: type)
+            NetworkLogger.log(request: request)
             task = session.dataTask(with: request, completionHandler: { data, response, error in
                 do {
-                    let dictResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
-                    NetworkLogger.log(response: dictResponse ?? ["Response" : ""])
+                    print(response as Any)
+                    let dictResponse = try JSONSerialization.jsonObject(with: data!, options: [])
+                    NetworkLogger.log(response: dictResponse)
                     completion(dictResponse, error)
                 } catch {
                     completion(nil, error)
                 }
             })
+            task?.resume()
         } catch {
             completion(nil, error)
         }
@@ -47,7 +50,6 @@ fileprivate func buildRequest(from route: EndPointType) throws -> URLRequest {
             appendAdditionalHeaders(additionalHeaders, request: &request)
             try configureParams(bodyParams: bodyParams, urlParams: urlParams, request: &request)
         }
-        NetworkLogger.log(request: request)
         return request
     } catch {
         throw error

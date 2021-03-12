@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias NetworkRouterCompletion = (_ response: [String : Any]?,_ error: Error?)->()
+public typealias NetworkRouterCompletion = (_ response: Any?,_ error: Error?)->()
 
 protocol NetworkRouter: AnyObject {
     func request(endPintType type: EndPointType, completion: @escaping NetworkRouterCompletion)

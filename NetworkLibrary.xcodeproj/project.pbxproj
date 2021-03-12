@@ -15,6 +15,13 @@
 		9816161C25FA70C400F064CB /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161B25FA70C400F064CB /* NetworkRouter.swift */; };
 		9816161E25FA726A00F064CB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161D25FA726A00F064CB /* Router.swift */; };
 		9816162025FA855B00F064CB /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161F25FA855B00F064CB /* NetworkLogger.swift */; };
+		98A5C9D925FB451A00B65B18 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A5C9D825FB451A00B65B18 /* NetworkManager.swift */; };
+		98A5C9DA25FB5A0A00B65B18 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A5C9D825FB451A00B65B18 /* NetworkManager.swift */; };
+		98A5C9DB25FB5A1600B65B18 /* Servicemanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161725FA520400F064CB /* Servicemanager.swift */; };
+		98A5C9DC25FB62D200B65B18 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161D25FA726A00F064CB /* Router.swift */; };
+		98A5C9DD25FB62D800B65B18 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161925FA556000F064CB /* ParameterEncoding.swift */; };
+		98A5C9DE25FB62E200B65B18 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161B25FA70C400F064CB /* NetworkRouter.swift */; };
+		98A5C9DF25FB62EA00B65B18 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816161F25FA855B00F064CB /* NetworkLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,7 @@
 		9816161B25FA70C400F064CB /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		9816161D25FA726A00F064CB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9816161F25FA855B00F064CB /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		98A5C9D825FB451A00B65B18 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		9816161425FA518200F064CB /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				98A5C9D825FB451A00B65B18 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A5C9D925FB451A00B65B18 /* NetworkManager.swift in Sources */,
 				9816162025FA855B00F064CB /* NetworkLogger.swift in Sources */,
 				9816161E25FA726A00F064CB /* Router.swift in Sources */,
 				9816161A25FA556000F064CB /* ParameterEncoding.swift in Sources */,
@@ -254,7 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A5C9DF25FB62EA00B65B18 /* NetworkLogger.swift in Sources */,
+				98A5C9DC25FB62D200B65B18 /* Router.swift in Sources */,
+				98A5C9DB25FB5A1600B65B18 /* Servicemanager.swift in Sources */,
+				98A5C9DD25FB62D800B65B18 /* ParameterEncoding.swift in Sources */,
+				98A5C9DA25FB5A0A00B65B18 /* NetworkManager.swift in Sources */,
 				9816160725FA4FFF00F064CB /* NetworkLibraryTests.swift in Sources */,
+				98A5C9DE25FB62E200B65B18 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
