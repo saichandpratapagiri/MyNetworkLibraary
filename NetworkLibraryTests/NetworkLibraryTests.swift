@@ -41,13 +41,15 @@ extension NetworkLibraryTests: Configure {
 extension NetworkLibraryTests: EndPointType {
     
     var baseUrl: URL {
+        return URL(string: "https://api.imgflip.com/")!
 //        return URL(string: "https://swapi.dev/")!
-        return URL(string: "https://jsonplaceholder.typicode.com/")!
+//        return URL(string: "https://jsonplaceholder.typicode.com/")!
     }
     
     var path: String {
+        return "get_memes"
 //        return "api/people/"
-        return "todos"
+//        return "todos"
     }
     
     var httpMethod: HttpMethod {
